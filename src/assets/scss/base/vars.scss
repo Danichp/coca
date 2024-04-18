@@ -20,7 +20,13 @@
   --container-padding: 15px;
 
   // transition
-  --transition-duration: 0.2s;
+  --transition-duration: 0.275s;
+
+  // z-index
+  --z-index-1: 1;
+  --z-index-2: 2;
+  --z-index-3: 3;
+  --z-index-4: 4;
 }
 
 [data-theme='dark'] {

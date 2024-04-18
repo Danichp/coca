@@ -1,11 +1,24 @@
 .header {
   padding: 26px 0 22px;
 
+  @include mobile {
+    padding: 22px 0 18px;
+  }
+
   &__inner {
     @include flex-all-between;
   }
 
   &__logo {
+    position: relative;
+    z-index: var(--z-index-4);
+
+    & svg {
+      @include mobile {
+        max-width: 130px;
+      }
+    }
+
     & path {
       &:not(:last-child) {
         fill: var(--logo-color-text);
@@ -20,6 +33,34 @@
   &__right {
     @include flex-align-center;
     gap: 111px;
+
+    @include tablet {
+      gap: 60px;
+    }
+
+    @include small-tablet {
+      position: fixed;
+      top: 0;
+      left: -100vw;
+      z-index: var(--z-index-3);
+      flex-direction: column;
+      justify-content: center;
+      width: 80dvw;
+      height: 100dvh;
+      background-color: var(--neutral-color-10);
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        left var(--transition-duration),
+        opacity var(--transition-duration),
+        visibility var(--transition-duration);
+
+      &--visible {
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
 
   &__switcher {
@@ -76,6 +117,15 @@
   &__list {
     @include flex-align-center;
     gap: 32px;
+
+    @include small-tablet {
+      gap: 20px;
+      flex-direction: column;
+    }
+
+    @include mobile {
+      gap: 10px;
+    }
   }
 
   &__link {
@@ -83,6 +133,10 @@
     font-weight: 500;
     line-height: 1.625;
     color: var(--neutral-color-100);
+
+    @include small-tablet {
+      line-height: 2;
+    }
 
     &::after {
       content: '';
@@ -106,4 +160,27 @@
       }
     }
   }
+}
+
+.overlay {
+  @include small-tablet {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-index-2);
+    background-color: #000000b3;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--transition-duration),
+      visibility var(--transition-duration);
+  }
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.burger {
+  @include burger;
 }

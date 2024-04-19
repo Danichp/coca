@@ -1,5 +1,22 @@
 .header {
+  position: relative;
+  z-index: var(--z-index-3);
   padding: 26px 0 22px;
+
+  // opacity: 0;
+  // visibility: hidden;
+
+  // &--show {
+  //   opacity: 1;
+  //   visibility: visible;
+  // }
+
+  // &--fixed {
+  //   position: fixed;
+  //   top: 0;
+  //   right: 0;
+  //   left: 0;
+  // }
 
   @include mobile {
     padding: 22px 0 18px;
@@ -135,6 +152,7 @@
     color: var(--neutral-color-100);
 
     @include small-tablet {
+      font-size: 20px;
       line-height: 2;
     }
 

@@ -1,0 +1,20 @@
+.button {
+  border-radius: 100px;
+  padding: 16px 32px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--neutral-color-10);
+  background-color: var(--neutral-color-100);
+  transition: opacity var(--transition-duration);
+
+  &:hover {
+    opacity: 0.85;
+  }
+
+  &--accent {
+    color: var(--neutral-color-100);
+    background-color: var(--neutral-color-10);
+  }
+}

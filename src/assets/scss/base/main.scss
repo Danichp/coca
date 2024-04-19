@@ -18,6 +18,10 @@ html {
   color: var(--neutral-color-100);
   background-color: var(--neutral-color-10);
 
+  &--fixes {
+    overflow-y: hidden;
+  }
+
   &--fixed {
     overflow-y: hidden;
   }

@@ -7,7 +7,7 @@
   }
 
   @include mobile {
-    padding: 40px 0 80px;
+    min-height: calc(100dvh - 109px);
   }
 
   &::before {
@@ -80,7 +80,7 @@
   &__content {
     @include flex-align-center;
     flex-direction: column;
-    max-width: 599px;
+    max-width: 620px;
   }
 
   &__title {

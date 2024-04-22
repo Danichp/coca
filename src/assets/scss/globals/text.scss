@@ -5,6 +5,22 @@
 
   &-h2 {
     font-size: 56px;
+
+    @include tablet {
+      font-size: 50px;
+    }
+
+    @include small-tablet {
+      font-size: 44px;
+    }
+
+    @include mobile {
+      font-size: 32px;
+    }
+
+    @include small-mobile {
+      font-size: 28px;
+    }
   }
 
   &-h3 {
@@ -17,6 +33,14 @@
 
   &-h5 {
     font-size: 32px;
+
+    @include mobile {
+      font-size: 24px;
+    }
+
+    @include small-mobile {
+      font-size: 22px;
+    }
   }
 
   &-h1,
@@ -50,6 +74,7 @@
       &::before {
         content: '';
         display: inline-block;
+        flex-shrink: 0;
         width: 76px;
         height: 1px;
         background-color: var(--neutral-color-130);
@@ -67,6 +92,10 @@
 
     &-medium {
       font-size: 18px;
+
+      @include mobile {
+        font-size: 16px;
+      }
     }
 
     &-default {

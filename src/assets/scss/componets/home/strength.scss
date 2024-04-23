@@ -1,10 +1,29 @@
 .strength {
-  padding: 66px 0 160px;
+  &__container {
+    border-bottom: 1px solid var(--neutral-color-30);
+    padding-top: 66px;
+    padding-bottom: 160px;
+
+    @include mobile {
+      padding-top: 26px;
+      padding-bottom: 80px;
+    }
+  }
 
   &__list {
     display: flex;
     gap: clamp(70px, 10vw, 144px);
     margin-bottom: 80px;
+
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include mobile {
+      gap: 30px;
+      margin-bottom: 50px;
+    }
   }
 
   &__item {
@@ -12,6 +31,19 @@
     font-weight: 500;
     line-height: 1.8;
     color: var(--neutral-color-150);
+
+    @include tablet {
+      min-width: 320px;
+    }
+
+    @include mobile {
+      min-width: none;
+    }
+
+    @include small-tablet {
+      @include flex-all-center;
+      flex-direction: column;
+    }
 
     &:not(:last-child)::after {
       content: '';
@@ -23,6 +55,10 @@
       height: 99px;
       background-color: #ced1d8;
       transform: translateY(-50%);
+
+      @include tablet {
+        display: none;
+      }
     }
 
     &-num {
@@ -31,15 +67,33 @@
       font-size: 64px;
       line-height: 1.2;
       color: var(--neutral-color-100);
+
+      @include mobile {
+        font-size: 52px;
+      }
+
+      @include small-mobile {
+        font-size: 46px;
+      }
     }
   }
 
   &__img {
     margin-bottom: 80px;
+
+    @include mobile {
+      margin-bottom: 50px;
+    }
   }
 
   &__text {
     @include flex-justify-between;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
   }
 
   &__title {
@@ -47,6 +101,10 @@
     line-height: 1.2;
     letter-spacing: -0.04em;
     color: var(--neutral-color-100);
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
   }
 
   &__desc {
@@ -54,5 +112,9 @@
     font-weight: 500;
     line-height: 1.8;
     color: var(--neutral-color-150);
+
+    @include tablet {
+      max-width: 600px;
+    }
   }
 }

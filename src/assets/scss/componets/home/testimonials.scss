@@ -1,0 +1,127 @@
+.testimonials {
+  padding: 69px 0 150px;
+
+  @include tablet {
+    padding: 29px 0 70px;
+  }
+
+  &__head {
+    @include flex-all-between;
+    gap: 30px;
+    margin-bottom: 48px;
+
+    @include tablet {
+      gap: 24px;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    max-width: 530px;
+
+    @include tablet {
+      max-width: none;
+    }
+  }
+
+  &__desc {
+    max-width: 376px;
+  }
+
+  &__img-quote {
+    transform: translateY(15px);
+
+    @include mini-desktop {
+      margin-bottom: 10px;
+      transform: none;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  &__slider {
+    max-width: 898px;
+
+    @include small-tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__comment {
+    &-rating {
+      @include flex-align-center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    &-text {
+      margin-bottom: 40px;
+    }
+
+    &-author {
+      @include flex-align-center;
+      gap: 24px;
+
+      &-img {
+        border-radius: 50%;
+      }
+
+      &-name {
+        font-weight: 600;
+        line-height: 1.4;
+        color: var(--neutral-color-100);
+      }
+
+      &-profession {
+        font-weight: 500;
+        line-height: 1.625;
+        color: var(--neutral-color-150);
+      }
+    }
+  }
+
+  &__control {
+    @include flex-align-center;
+    gap: 16px;
+    float: right;
+    margin-right: 3%;
+    transform: translateY(-40px);
+
+    @include mini-desktop {
+      transform: none;
+    }
+  }
+
+  &__button {
+    @include flex-all-center;
+    border: 1px solid var(--neutral-color-40);
+    border-radius: 50%;
+    padding: 16px;
+    width: 50px;
+    height: 50px;
+    transition:
+      border-color var(--transition-duration),
+      background-color var(--transition-duration);
+    cursor: pointer;
+
+    & path {
+      transition: all var(--transition-duration);
+    }
+
+    &:hover {
+      border-color: var(--neutral-color-100);
+      background-color: var(--neutral-color-100);
+
+      & path {
+        fill: var(--neutral-color-10);
+      }
+    }
+
+    &--next {
+      transform: rotate(-180deg);
+    }
+  }
+}

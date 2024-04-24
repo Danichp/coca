@@ -4,9 +4,16 @@ import '../assets/scss/main.scss';
 import { useTheme } from './components/theme';
 import { useBurger } from './components/burger';
 import { useScrollHeader } from './components/scrollHeader';
-import { useInsightSlider, usePartnersSlider } from './components/slider';
+import { useAccordion } from './components/accordion';
+import {
+  useInsightSlider,
+  usePartnersSlider,
+  useTestimonialsSlider,
+} from './components/slider';
 
 useTheme();
 useBurger();
 useInsightSlider();
 usePartnersSlider();
+useTestimonialsSlider();
+useAccordion();

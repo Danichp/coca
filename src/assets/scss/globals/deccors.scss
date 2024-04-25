@@ -1,0 +1,59 @@
+.hero-deccor {
+  position: relative;
+
+  &::before {
+    top: 50px;
+    left: 180px;
+    width: 551px;
+    height: 551px;
+    background-color: #fa7515;
+    opacity: 0.2;
+    filter: blur(220px);
+
+    @include mini-desktop {
+      width: 351px;
+      height: 351px;
+    }
+
+    @include tablet {
+      left: 0;
+    }
+
+    @include small-mobile {
+      width: 251px;
+      height: 251px;
+    }
+  }
+
+  &::after {
+    right: 0;
+    bottom: 0;
+    width: 525px;
+    height: 525px;
+    background-color: var(--sucsess-color-70);
+    filter: blur(180px);
+
+    @include mini-desktop {
+      width: 325px;
+      height: 325px;
+    }
+
+    @include tablet {
+      right: 0;
+    }
+
+    @include small-mobile {
+      width: 251px;
+      height: 251px;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    display: inline-block;
+    border-radius: 50%;
+  }
+}

@@ -16,14 +16,14 @@ export const usePlanSwitcher = () => {
         priceArray[i].textContent = priceNumArray[i];
       }
       priceTimeArray.forEach((el) => {
-        el.innerHTML = '/mo';
+        el.textContent = '/mo';
       });
     } else {
       for (let i = 0; i < priceArray.length; i++) {
         priceArray[i].textContent = (priceNumArray[i] * 1.2) / 30;
       }
       priceTimeArray.forEach((el) => {
-        el.innerHTML = '/day';
+        el.textContent = '/day';
       });
     }
   });

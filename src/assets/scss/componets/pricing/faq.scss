@@ -1,0 +1,83 @@
+.faq {
+  padding: 82px 0 160px;
+
+  @include tablet {
+    padding: 42px 0 80px;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+    text-align: center;
+    color: var(--neutral-color-100);
+  }
+
+  &__desc {
+    margin-bottom: 80px;
+    font-weight: 500;
+    line-height: 1.8;
+    text-align: center;
+    color: var(--neutral-color-150);
+
+    @include mobile {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__accordion {
+    margin-bottom: 56px;
+    border-bottom: 1px solid var(--neutral-color-30);
+    padding-bottom: 32px;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+
+    &-control {
+      @include flex-all-between;
+      gap: 15px;
+      list-style: none;
+      cursor: pointer;
+    }
+
+    &-title {
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--neutral-color-100);
+    }
+
+    &-icon {
+      position: relative;
+      width: 24px;
+      height: 24px;
+
+      &::after {
+        transform: rotate(90deg);
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        border-radius: 100px;
+        width: 18px;
+        height: 3px;
+        background-color: var(--neutral-color-100);
+      }
+    }
+
+    &[open] &-icon::after {
+      display: none;
+    }
+
+    &-text {
+      margin-top: 16px;
+      font-weight: 500;
+      line-height: 1.8;
+      color: var(--neutral-color-150);
+    }
+  }
+}

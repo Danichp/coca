@@ -6824,21 +6824,30 @@ export const useMapYandex = () => {
     map.addChild(new YMapDefaultFeaturesLayer());
     map.addChild(layer);
 
-    const markerElement = document.createElement('div');
-    markerElement.className = 'marker-class';
-    markerElement.innerText = "I'm marker!";
+    const markerDiv = document.createElement('div');
+    markerDiv.classList.add('marker');
 
-    const marker = new YMapMarker(
-      {
-        source:
-          'https://wudgleyd.ru/wp-content/uploads/d/0/f/d0f31ffed9d2273e6c4d533aa3b984fa.png',
-        coordinates: [37.588144, 55.733842],
-        draggable: true,
-        mapFollowsOnDrag: true,
-      },
-      markerElement,
-    );
+    const img = document.createElement('img');
+    img.classList.add('marker__img');
+    img.setAttribute('src', '../../assets/icons/map-marker.svg');
+    img.setAttribute('alt', '');
 
-    map.addChild(marker);
+    const markerTextDiv = document.createElement('div');
+    markerTextDiv.classList.add('marker__text');
+
+    const title = document.createElement('h4');
+    title.classList.add('marker__title');
+    title.textContent = 'Yogja, INA';
+
+    const desc = document.createElement('p');
+    desc.classList.add('marker__desc');
+    desc.textContent = '100 Smith Street Collingwood VIC 3066 AU';
+
+    markerTextDiv.appendChild(title);
+    markerTextDiv.appendChild(desc);
+
+    markerDiv.appendChild(img);
+    markerDiv.appendChild(markerTextDiv);
+    map.addChild(new YMapMarker({ coordinates: [135.5, -25.5] }, markerDiv));
   }
 };

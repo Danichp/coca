@@ -10,6 +10,7 @@ export default defineConfig({
     open: true,
   },
   publicDir: './src/assets',
+  base: '/coca/',
   build: {
     outDir: '../dist',
     emptyOutDir: true,
@@ -22,6 +23,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    ViteMinifyPlugin(),
     ViteImageOptimizer({
       png: {
         quality: 80,
@@ -31,6 +33,5 @@ export default defineConfig({
       },
     }),
     injectHTML(),
-    ViteMinifyPlugin(),
   ],
 });

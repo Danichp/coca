@@ -1,3 +1,5 @@
+import imageSrc from '../../assets/icons/map-marker.svg';
+
 export const useMapYandex = () => {
   initMap();
 
@@ -6829,7 +6831,7 @@ export const useMapYandex = () => {
 
     const img = document.createElement('img');
     img.classList.add('marker__img');
-    img.setAttribute('src', '../../assets/icons/map-marker.svg');
+    img.src = imageSrc;
     img.setAttribute('alt', '');
 
     const markerTextDiv = document.createElement('div');

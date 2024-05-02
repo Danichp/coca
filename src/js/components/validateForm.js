@@ -44,6 +44,6 @@ export const useValidateForm = () => {
     input.classList.remove('error');
   }
   function telTest(input) {
-    return input.value.lenght !== 17;
+    return input.value.lenght == 17;
   }
 };

@@ -1,0 +1,67 @@
+.join {
+  padding: 100px 0 160px;
+
+  @include small-tablet {
+    padding: 60px 0 80px;
+  }
+
+  &__container {
+    @include flex-all-between;
+    gap: 30px;
+
+    @include small-desktop {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    max-width: 626px;
+
+    @include small-desktop {
+      max-width: 710px;
+    }
+  }
+
+  &__desc {
+    margin-bottom: 24px;
+    max-width: 506px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--neutral-color-150);
+
+    @include small-desktop {
+      max-width: 910px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--neutral-color-100);
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: -5px;
+      left: 0;
+      height: 1px;
+      background-color: var(--neutral-color-100);
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity var(--transition-duration),
+        visibility var(--transition-duration);
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}

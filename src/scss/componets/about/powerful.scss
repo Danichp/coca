@@ -1,0 +1,36 @@
+.powerful {
+  &__container {
+    @include flex-all-between;
+    gap: 30px;
+    border-top: 1px solid var(--neutral-color-30);
+    border-bottom: 1px solid var(--neutral-color-30);
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    @include small-desktop {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    @include small-tablet {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__title {
+    max-width: 510px;
+
+    @include small-desktop {
+      max-width: 710px;
+    }
+  }
+
+  &__desc {
+    max-width: 522px;
+
+    @include small-desktop {
+      max-width: 910px;
+    }
+  }
+}

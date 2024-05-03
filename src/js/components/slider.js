@@ -18,8 +18,7 @@ export const useInsightSlider = () => {
     modules: [Scrollbar],
     slidesPerView: 1,
     spaceBetween: 20,
-    centeredSlides: true,
-    initialSlide: 1,
+    initialSlide: 0,
 
     scrollbar: {
       el: '.insight__scrollbar',
@@ -27,14 +26,11 @@ export const useInsightSlider = () => {
     },
 
     breakpoints: {
-      578: {
-        slidesPerView: 1.15,
+      579: {
+        slidesPerView: 'auto',
       },
       769: {
         spaceBetween: 32,
-        centeredSlides: false,
-        initialSlide: 0,
-        slidesPerView: 'auto',
 
         scrollbar: {
           dragSize: 300,
@@ -78,6 +74,71 @@ export const useTestimonialsSlider = () => {
     navigation: {
       nextEl: '.testimonials__button--next',
       prevEl: '.testimonials__button--prev',
+    },
+  });
+};
+
+export const useHeroSlider = () => {
+  new Swiper('.hero__slider', {
+    modules: [Scrollbar, Autoplay],
+    slidesPerView: 1,
+    spaceBetween: 20,
+    centeredSlides: true,
+    initialSlide: 1,
+    speed: 3000,
+
+    autoplay: {
+      delay: 3000,
+    },
+
+    scrollbar: {
+      el: '.hero__scrollbar',
+      dragSize: 'auto',
+    },
+
+    breakpoints: {
+      578: {
+        slidesPerView: 1.15,
+      },
+      769: {
+        spaceBetween: 32,
+        centeredSlides: false,
+        initialSlide: 0,
+        slidesPerView: 'auto',
+
+        scrollbar: {
+          dragSize: 300,
+        },
+      },
+    },
+  });
+};
+
+export const useTeamSlider = () => {
+  new Swiper('.team__slider', {
+    modules: [Scrollbar, Autoplay],
+    slidesPerView: 1,
+    spaceBetween: 20,
+    initialSlide: 0,
+
+    scrollbar: {
+      el: '.team__scrollbar',
+      dragSize: 'auto',
+    },
+
+    breakpoints: {
+      769: {
+        spaceBetween: 32,
+        initialSlide: 0,
+        slidesPerView: 'auto',
+
+        scrollbar: {
+          dragSize: 300,
+        },
+      },
+      993: {
+        slidesPerView: 3,
+      },
     },
   });
 };

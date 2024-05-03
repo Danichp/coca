@@ -25,6 +25,7 @@
 
     @include small-tablet {
       position: relative;
+      padding: 36px 28px;
     }
   }
 
@@ -47,6 +48,10 @@
     &-top {
       @include flex-all-between;
       gap: 32px;
+
+      @include small-tablet {
+        display: block;
+      }
     }
 
     &-label {

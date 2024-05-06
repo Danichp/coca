@@ -142,3 +142,39 @@ export const useTeamSlider = () => {
     },
   });
 };
+
+export const useActivitySlider = () => {
+  new Swiper('.activity__tab-slider', {
+    modules: [Scrollbar, Autoplay],
+    slidesPerView: 1,
+    spaceBetween: 20,
+    centeredSlides: true,
+    initialSlide: 1,
+    speed: 3000,
+
+    autoplay: {
+      delay: 3000,
+    },
+
+    scrollbar: {
+      el: '.activity__tab-scrollbar',
+      dragSize: 'auto',
+    },
+
+    breakpoints: {
+      578: {
+        slidesPerView: 1.15,
+      },
+      769: {
+        spaceBetween: 32,
+        centeredSlides: false,
+        initialSlide: 0,
+        slidesPerView: 'auto',
+
+        scrollbar: {
+          dragSize: 300,
+        },
+      },
+    },
+  });
+};

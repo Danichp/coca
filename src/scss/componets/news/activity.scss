@@ -2,6 +2,10 @@
   position: relative;
   padding: 95px 0 168px;
 
+  @include small-tablet {
+    padding: 55px 0 88px;
+  }
+
   &::before {
     top: 0;
     left: 250px;
@@ -28,7 +32,7 @@
 
   &::after {
     right: 0;
-    bottom: 0;
+    bottom: 40%;
     width: 525px;
     height: 525px;
     background-color: var(--sucsess-color-70);
@@ -64,6 +68,10 @@
     line-height: 1.2;
     letter-spacing: -0.04em;
     color: var(--neutral-color-100);
+
+    @include small-tablet {
+      margin-bottom: 40px;
+    }
   }
 
   &__subtitle {
@@ -73,13 +81,22 @@
     line-height: 1.3;
     letter-spacing: -0.03em;
     color: var(--neutral-color-100);
+
+    @include small-tablet {
+      margin-bottom: 60px;
+    }
   }
 
   &__tab {
     &-controls {
       @include flex-align-center;
       gap: 30px;
+      flex-wrap: wrap;
       margin-bottom: 90px;
+
+      @include small-tablet {
+        margin-bottom: 50px;
+      }
 
       &-link {
         position: relative;
@@ -148,6 +165,10 @@
       opacity: 1;
       transition: opacity var(--transition-duration);
 
+      @include small-tablet {
+        max-width: 350px;
+      }
+
       &:hover {
         opacity: 0.8;
       }
@@ -158,7 +179,7 @@
 
       &-image {
         position: relative;
-        padding-bottom: 100%;
+        padding-bottom: 83%;
 
         & img {
           position: absolute;
@@ -173,11 +194,17 @@
 
       &-head {
         @include flex-all-between;
+        gap: 10px;
+        flex-wrap: wrap;
         margin-top: 16px;
         margin-bottom: 24px;
         font-weight: 400;
         line-height: 1.5;
         color: var(--neutral-color-150);
+
+        @include small-mobile {
+          margin-bottom: 16px;
+        }
       }
 
       &-title {

@@ -1,0 +1,55 @@
+.major {
+  padding: 120px 0;
+  background-color: var(--dark-bg);
+
+  @include small-tablet {
+    padding: 80px 0;
+  }
+
+  &__container {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include mobile {
+      gap: 60px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 160px;
+    flex-direction: column;
+    max-width: 584px;
+
+    @include small-tablet {
+      gap: 60px;
+    }
+  }
+
+  &__item {
+    & img {
+      margin-bottom: 24px;
+    }
+
+    &-title {
+      position: relative;
+      margin-bottom: 24px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #fff;
+    }
+
+    &:hover &-title {
+      text-decoration: underline;
+    }
+
+    &-text {
+      max-width: 515px;
+      font-weight: 500;
+      line-height: 1.8;
+      color: #7e8492;
+    }
+  }
+}

@@ -146,7 +146,7 @@ export const useTeamSlider = () => {
 export const useActivitySlider = () => {
   new Swiper('.activity__tab-slider', {
     modules: [Scrollbar, Autoplay],
-    slidesPerView: 1,
+    slidesPerView: 'auto',
     spaceBetween: 20,
     centeredSlides: true,
     initialSlide: 1,
@@ -162,14 +162,37 @@ export const useActivitySlider = () => {
     },
 
     breakpoints: {
-      578: {
-        slidesPerView: 1.15,
-      },
       769: {
         spaceBetween: 32,
         centeredSlides: false,
         initialSlide: 0,
+
+        scrollbar: {
+          dragSize: 300,
+        },
+      },
+    },
+  });
+};
+
+export const useArticleSlider = () => {
+  new Swiper('.article__slider', {
+    modules: [Navigation],
+    slidesPerView: 1,
+    spaceBetween: 20,
+    initialSlide: 0,
+
+    navigation: {
+      nextEl: '.article__button--next',
+      prevEl: '.article__button--prev',
+    },
+
+    breakpoints: {
+      569: {
         slidesPerView: 'auto',
+      },
+      769: {
+        spaceBetween: 32,
 
         scrollbar: {
           dragSize: 300,

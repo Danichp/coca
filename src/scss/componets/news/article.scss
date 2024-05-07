@@ -80,8 +80,6 @@
   }
 
   &__slide {
-    max-width: 435px;
-
     @include small-mobile {
       text-align: center;
     }

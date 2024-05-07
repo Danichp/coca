@@ -180,7 +180,7 @@ export const useArticleSlider = () => {
     modules: [Navigation],
     slidesPerView: 1,
     spaceBetween: 20,
-    initialSlide: 0,
+    slidesPerGroup: 1,
 
     navigation: {
       nextEl: '.article__button--next',
@@ -188,15 +188,20 @@ export const useArticleSlider = () => {
     },
 
     breakpoints: {
+      381: {
+        slidesPerView: 1.1,
+      },
       569: {
-        slidesPerView: 'auto',
+        slidesPerView: 1.5,
       },
       769: {
-        spaceBetween: 32,
-
+        slidesPerView: 2,
         scrollbar: {
           dragSize: 300,
         },
+      },
+      993: {
+        slidesPerView: 2.5,
       },
     },
   });
